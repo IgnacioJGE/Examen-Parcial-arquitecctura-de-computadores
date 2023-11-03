@@ -10,10 +10,10 @@ export const getallMonuments = async (req: Request, res: Response) => {
     }
 
     const monumentoencontrado = await ModeloMonumento.find().exec();
-    const allMonumentos =  monumentoencontrado.map (async(monumentoencontrado) => ({
+    const allMonumentos =  monumentoencontrado.map ((monumentoencontrado) => ({
         id: monumentoencontrado._id,
         nombre :monumentoencontrado.nombre,
-        pais: await getPais(monumentoencontrado.ISO)
+        pais: monumentoencontrado.ISO
 
       }));
     res.status(200).send(allMonumentos);
