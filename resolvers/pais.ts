@@ -21,7 +21,6 @@ export const getPais = async (ISO: string): Promise<string> => {
     }
     const jsondata = await data.json();
   
-    const tochodeapi:cosa = jsondata.results;
-    const respuesta:string=tochodeapi.todo.at(0)?.name.common;
-    return respuesta;
+    const tochodeapi:pais[] = jsondata.results;
+    return tochodeapi.at(0)?.name.common;
 }
