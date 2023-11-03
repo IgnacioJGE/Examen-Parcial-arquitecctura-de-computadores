@@ -1,8 +1,10 @@
 export type pais={
     name: tipocosas;
+    capital:string[];
 }
 export type tipocosas={
     common:string;
+    
 }
 export const getPais = async (ISO: string): Promise<string> => {
 
