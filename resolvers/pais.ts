@@ -1,9 +1,9 @@
 
 export type pais={
-    name: tipocosas;
+    name: name;
     capital:string[];
 }
-export type tipocosas={
+export type name={
     common:string;
 
 }
