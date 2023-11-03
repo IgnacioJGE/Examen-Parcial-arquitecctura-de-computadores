@@ -1,6 +1,4 @@
-export type global={
-  global:pais;
-}
+
 export type pais={
     name: name; 
     capital:string[];
@@ -19,8 +17,8 @@ export const getPais = async (ISO: string): Promise<string> => {
       throw new Error
 
     }
-    const jsondata:global[] = await data.json();
+    const jsondata:pais[] = await data.json();
   
     console.log(jsondata)
-    return jsondata[0].global.name.common;
+    return jsondata[0].name.common;
 }
