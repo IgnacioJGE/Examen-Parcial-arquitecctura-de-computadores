@@ -19,6 +19,6 @@ export const getPais = async (ISO: string): Promise<string> => {
     }
     const jsondata:pais[] = await data.json();
   
-    console.log(jsondata)
-    return jsondata[0].name.common;
+    console.log(jsondata[0].name.common)
+    return  (jsondata[0].name.common);
 }

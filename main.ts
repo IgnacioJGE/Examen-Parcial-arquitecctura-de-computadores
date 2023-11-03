@@ -4,6 +4,7 @@ import mongoose from "npm:mongoose@7.6.3";
 import { load } from "https://deno.land/std@0.204.0/dotenv/mod.ts";
 import { addMonumento } from "./resolvers/addmonumentos.ts";
 import { getallMonuments } from "./resolvers/getallMonuments.ts";
+import { getPais } from "./resolvers/pais.ts";
 const env = await load();
 const MONGO_URL=env.MONGO_URL||Deno.env.get("MONGO_URL")// si hay .emv lo leo si no lo lee de las variables de entorno de deno
 const PORT=env.PORT||Deno.env.get("PORT")||3000
@@ -12,6 +13,8 @@ if (!MONGO_URL) {
   Deno.exit(1);
 }
 try{
+ 
+  console.log(getPais("FR").then)
 await mongoose.connect(MONGO_URL);
 console.info("Mongo Concectado")
 const app= express();
