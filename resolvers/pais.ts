@@ -19,9 +19,8 @@ export const getPais = async (ISO: string): Promise<string> => {
       throw new Error
 
     }
-    const jsondata = await data.json();
+    const jsondata:global[] = await data.json();
   
-    const tochodeapi:global[] = jsondata.results;
-    console.log(tochodeapi)
-    return tochodeapi[0].global.name.common;
+    console.log(jsondata)
+    return jsondata[0].global.name.common;
 }
