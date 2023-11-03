@@ -1,6 +1,4 @@
-export type cosa={
-    todo:pais[];
-}
+
 export type pais={
     name: tipocosas;
     capital:string[];
@@ -22,5 +20,5 @@ export const getPais = async (ISO: string): Promise<string> => {
     const jsondata = await data.json();
   
     const tochodeapi:pais[] = jsondata.results;
-    return tochodeapi.at(0)?.name.common;
+    return tochodeapi[0].name.common;
 }
