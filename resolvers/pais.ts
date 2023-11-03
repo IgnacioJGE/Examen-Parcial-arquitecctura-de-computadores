@@ -1,6 +1,8 @@
-
+export type global={
+  global:pais;
+}
 export type pais={
-    name: name;
+    name: name; 
     capital:string[];
 }
 export type name={
@@ -19,7 +21,7 @@ export const getPais = async (ISO: string): Promise<string> => {
     }
     const jsondata = await data.json();
   
-    const tochodeapi:pais[] = jsondata.results;
-    console.log(tochodeapi[0])
-    return tochodeapi[0].name.common;
+    const tochodeapi:global[] = jsondata.results;
+    console.log(tochodeapi)
+    return tochodeapi[0].global.name.common;
 }
